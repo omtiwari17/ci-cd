@@ -7,7 +7,7 @@ function App() {
   return (
     <div style={{ textAlign: "center", marginTop: "3rem" }}>
       <h1>CI/CD + Docker Demo</h1>
-      <p>Branch: dev → Docker Hub → Render → Test</p>
+      <p>Branch: dev → Docker Hub → Render → Done</p>
     </div>
   );
 }
