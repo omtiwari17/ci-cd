@@ -40,5 +40,11 @@ jobs:
           context: .
           push: true
           tags: |
-            tiwariom/my-react-app:latest
-            tiwariom/my-react-app:${{ steps.vars.outputs.TAG }}
+            tiwariom/react-app:latest
+            tiwariom/react-app:${{ steps.vars.outputs.TAG }}
+
+      - name: Trigger Render deploy
+        if: success()
+        run: curl -X POST "$RENDER_DEPLOY_HOOK"
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
